@@ -6,8 +6,8 @@ import { getToken } from '../../utils/handleToken'; // lấy từ localStorage
 // 👉 Nếu dùng CRA: process.env.REACT_APP_API_URL
 const axiosRequestConfig = {
   baseURL: process.env.REACT_APP_ENVIRONMENT === 'development' 
-            ? `${process.env.REACT_APP_API_URL_DEVELOPMENT}` 
-            : `${process.env.REACT_APP_API_URL_PRODUCTION}`,
+            ? process.env.REACT_APP_API_URL_DEVELOPMENT 
+            : process.env.REACT_APP_API_URL_PRODUCTION,
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',
