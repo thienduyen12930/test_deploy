@@ -5,7 +5,9 @@ import { getToken } from '../../utils/handleToken'; // lấy từ localStorage
 // 👉 Nếu dùng Vite: import.meta.env.VITE_API_URL
 // 👉 Nếu dùng CRA: process.env.REACT_APP_API_URL
 const axiosRequestConfig = {
-  baseURL: "http://localhost:5000/api",
+  baseURL: process.env.REACT_APP_ENVIRONMENT === 'development' 
+            ? `${process.env.REACT_APP_API_URL_DEVELOPMENT}` 
+            : `${process.env.REACT_APP_API_URL_PRODUCTION}`,
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',

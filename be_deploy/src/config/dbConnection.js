@@ -6,7 +6,7 @@ require('dotenv').config();
 const dbConnecion = async () =>{
     console.log(process.env.MONGODB_URI_PRODUCTION)
     try{
-        const db = await mongoose.connect(process.env.MONGODB_URI_PRODUCTION, {
+        const db = await mongoose.connect(process.env.ENVIRONMENT == "development" ? process.env.MONGODB_URI_DEVELOPMENT : process.env.MONGODB_URI_PRODUCTION, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });

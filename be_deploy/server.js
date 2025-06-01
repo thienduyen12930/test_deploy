@@ -16,14 +16,14 @@ const server = http.createServer(app);
 
 //from cors
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: ['https://test-deploy-eight-pi.vercel.app', 'http://localhost:3000'],
   credentials: true
 }));
 
 //Socket
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['https://test-deploy-eight-pi.vercel.app', 'http://localhost:3000'],
     credentials: true
   }
 });
